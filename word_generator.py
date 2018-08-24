@@ -4,57 +4,39 @@ def generate_word(freq_map):
 
 	word = []
 
-	letter = " "
+	for letter in generate_letters(letter,freq_map)
 
-	while True:
+		if letter == " ":
 
-		letter = get_next_letter(letter,freq_map)
-
-		if letter = " ":
-
-			return word.join("")
+			return "".join(word)
 
 		else:
 
 			word.append(letter)
 
-def get_next_letter(letter,freq_map):
+def generate_letters(letter,freq_map):
 
 	next_letter_distribution = freq_map[letter]
 
 	k = random.random()
 
-	for i, letter_prob in next_letter_distribution:
+	for i, letter_prob in enumerate(next_letter_distribution):
 
 		k -= letter_prob
 
 		if k <= 0:
 
 			if i == len(next_letter_distribution) - 1:
-				return " "
 
-			return chr(ord('a') + i)
+				yield " "
 
-	return " "
+			else:
+
+				yield chr(ord('a') + i)
 
 
-def generate_frequency_map(textfile):
 
-	#create a empty list for all letters of the alphabet
-	freq_map = {chr(i + ord('a'): [0 for j in range(27)] for i in range(26))}
-
-	#add space character to map
-	freq_map[" "] = [0 for j in range(27)]
-
-	file = open("textfile")
-
-	last_letter = " "
-
-	for line in file:
-
-		letter_array = clean_line(line)
-
-		for k in letter_array:
+	
 
 			
 
