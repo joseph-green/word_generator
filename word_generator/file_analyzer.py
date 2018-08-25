@@ -4,8 +4,6 @@ def scale_frequency_map(freq_map):
 
 		s = sum(val)
 
-		print(s)
-
 		freq_map[key] = list(map(lambda x: x / s, val))
 
 def generate_frequency_map(textfile):

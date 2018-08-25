@@ -2,19 +2,23 @@ import random
 
 def generate_word(freq_map):
 
-	word = []
+ 	word = []
 
-	for letter in generate_letters(letter,freq_map)
+ 	letter = " "
 
-		if letter == " ":
+ 	while True:
 
-			return "".join(word)
+ 		letter = get_next_letter(letter,freq_map)
 
-		else:
+ 		if letter == " ":
 
-			word.append(letter)
+ 			return "".join(word)
 
-def generate_letters(letter,freq_map):
+ 		else:
+
+ 			word.append(letter)
+
+def get_next_letter(letter,freq_map):
 
 	next_letter_distribution = freq_map[letter]
 
@@ -28,12 +32,11 @@ def generate_letters(letter,freq_map):
 
 			if i == len(next_letter_distribution) - 1:
 
-				yield " "
+				return " "
 
-			else:
+			return chr(ord('a') + i)
 
-				yield chr(ord('a') + i)
-
+	return " "
 
 
 	

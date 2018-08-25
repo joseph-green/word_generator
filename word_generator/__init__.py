@@ -1,2 +1,2 @@
-from word_generator import generate_word
-from file_analyzer import generate_frequency_map
+from word_generator.generator import generate_word
+from word_generator.file_analyzer import generate_frequency_map
